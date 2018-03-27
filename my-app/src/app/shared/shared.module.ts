@@ -23,7 +23,7 @@ import { FormComponent } from './components/form/form.component';
   exports: [
     NavComponent,
     StateDirective,
-    NgbCollapseModule
+    FormComponent
   ]
 })
 export class SharedModule { }
