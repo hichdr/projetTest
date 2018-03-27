@@ -7,13 +7,10 @@ import { ListItemsComponent } from './items/containers/list-items/list-items.com
 import { PageError404Component } from './page-error404/page-error404/page-error404.component';
 
 const appRoutes: Routes = [
-  { path: 'home', component: HomeComponent },
-  { path: 'list', component: ListItemsComponent },
   { path: '',
     redirectTo: '/home',
     pathMatch: 'full'
-  },
-  { path: '**', component: PageError404Component }
+  }
 ];
 
 @NgModule({
@@ -21,7 +18,7 @@ const appRoutes: Routes = [
     CommonModule,
     RouterModule.forRoot(
       appRoutes,
-      { enableTracing: true } // <-- debugging purposes only
+    // { enableTracing: true } // <-- debugging purposes only
     )
     // other imports here
   ],

@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PageError404Component } from './page-error404/page-error404.component';
+import { PageErrorRoutingModule } from './page-error-routing.module';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    PageErrorRoutingModule
   ],
   declarations: [
     PageError404Component

@@ -3,11 +3,13 @@ import { CommonModule } from '@angular/common';
 import { NavComponent } from './components/nav/nav.component';
 import { StateDirective } from './directives/state/state.directive';
 import { RouterModule } from '@angular/router';
+import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    NgbCollapseModule
   ],
   declarations: [
     NavComponent,
@@ -15,7 +17,8 @@ import { RouterModule } from '@angular/router';
   ],
   exports: [
     NavComponent,
-    StateDirective
+    StateDirective,
+    NgbCollapseModule
   ]
 })
 export class SharedModule { }

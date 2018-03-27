@@ -12,6 +12,7 @@ export class NavComponent implements OnInit {
 
   ngOnInit() {
     this.title = 'My first Angular app';
+    this.isCollapsed = true;
   }
 
 }
