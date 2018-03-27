@@ -3,13 +3,15 @@
       <input type="text" class="form-control" placeholder="Prénom et nom" name="name"
       [(ngModel)]="newItem.name">
     </div>
+    {{ newItem.name }}
+
     <div class="form-group">
       <input type="text" class="form-control" placeholder="Ref. ex : 1245" name="reference"
       [(ngModel)]="newItem.reference">
     </div>
 
     <div class="form-group">
-      <select class="form-control" name="state">
+      <select class="form-control" name="state" [(ngModel)]="newItem.state">
           <option *ngFor="let libelle of libelles" [ngValue]="libelle">{{ libelle }}</option>
         </select>
     </div>

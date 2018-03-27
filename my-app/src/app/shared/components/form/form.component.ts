@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges } from '@angular/core';
 import { State } from '../../enums/state.enum';
 import { Item } from '../../models/item.model';
 
@@ -7,7 +7,7 @@ import { Item } from '../../models/item.model';
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.css']
 })
-export class FormComponent implements OnInit {
+export class FormComponent implements OnInit, OnChanges {
   libelles = Object.values(State);
   newItem: Item;
   constructor() { }
@@ -21,7 +21,11 @@ export class FormComponent implements OnInit {
     };
   }
 
-  process(): void {
+  ngOnChanges() {
+    console.log(this.newItem.name);
+  }
 
+  process(): void {
+    console.log(this.newItem);
   }
 }
