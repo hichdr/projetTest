@@ -6,7 +6,7 @@ import { LowerCasePipe } from '@angular/common';
 })
 export class StateDirective implements OnInit {
   @Input() appState: string;
-  //décorateur
+  //décorateur HostBinding permet de binder la propriété html
   @HostBinding('class') className;
   constructor() {
 
