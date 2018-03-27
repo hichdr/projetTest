@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { ItemsModule } from './items/items.module';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   imports: [
@@ -19,7 +20,8 @@ import { ItemsModule } from './items/items.module';
     HomeModule,
     PageError404Module,
     NgbModule.forRoot(),
-    ItemsModule
+    ItemsModule,
+    AppRoutingModule
   ],
   declarations: [
     AppComponent
