@@ -10,9 +10,6 @@ import { PageErrorRoutingModule } from './page-error-routing.module';
   ],
   declarations: [
     PageError404Component
-  ],
-  exports: [
-    PageError404Component
   ]
 })
 export class PageError404Module { }

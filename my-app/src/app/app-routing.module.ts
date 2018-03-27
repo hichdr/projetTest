@@ -10,6 +10,10 @@ const appRoutes: Routes = [
   { path: '',
     redirectTo: '/home',
     pathMatch: 'full'
+  },
+  {
+    path: 'items',
+    loadChildren: 'app/items/items.module#ItemsModule',
   }
 ];
 

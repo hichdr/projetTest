@@ -14,9 +14,6 @@ import { ItemsRoutingModule } from './items-routing.module';
   declarations: [
     ListItemsComponent,
     ItemComponent
-  ],
-  exports: [
-    ListItemsComponent
   ]
 })
 export class ItemsModule { }
