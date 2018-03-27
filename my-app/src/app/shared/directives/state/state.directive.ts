@@ -6,6 +6,7 @@ import { LowerCasePipe } from '@angular/common';
 })
 export class StateDirective implements OnInit {
   @Input() appState: string;
+  //décorateur
   @HostBinding('class') className;
   constructor() {
 
