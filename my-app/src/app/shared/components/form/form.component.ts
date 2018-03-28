@@ -1,7 +1,7 @@
 import { Component, OnInit, OnChanges, Output, EventEmitter } from '@angular/core';
 import { State } from '../../enums/state.enum';
 import { Item } from '../../models/item.model';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 
 @Component({
@@ -18,8 +18,20 @@ export class FormComponent implements OnInit, OnChanges {
 
   createForm() {
     this.form = this.fb.group({
-      name: '', // <--- the FormControl called "name"
-      reference: '',
+      name: [
+        '',
+        Validators.compose([
+          Validators.required,
+          Validators.minLength(5)
+        ])
+      ],
+      reference: [
+        '',
+        Validators.compose([
+          Validators.required,
+          Validators.minLength(4)
+        ])
+      ],
       state: State.ALIVRER
     });
   }
