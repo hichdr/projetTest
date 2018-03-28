@@ -4,6 +4,8 @@ import { Item } from '../../../shared/models/item.model';
 import { Resolve, Router } from '@angular/router';
 import { CollectionService } from '../collection/collection.service';
 
+import 'rxjs/add/operator/take';
+
 @Injectable()
 export class EditresolverService implements Resolve<Observable<Item>> {
 
@@ -14,7 +16,7 @@ export class EditresolverService implements Resolve<Observable<Item>> {
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Item>  {
     const id = route.paramMap.get('id');
-    return this.collectionService.getItem(id).map((data)) => {
+    return this.collectionService.getItem(id).take(1).map((data)) => {
       if (data) {
         return data;
       } else {
