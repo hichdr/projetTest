@@ -41,11 +41,9 @@ export class FormComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges() {
-    console.log();
   }
 
   process(): void {
     this.nItem.emit(this.form.value);
-    console.log();
   }
 }
