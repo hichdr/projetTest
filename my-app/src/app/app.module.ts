@@ -8,10 +8,12 @@ import { SharedModule } from './shared/shared.module';
 
 import { AppComponent } from './app.component';
 
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { Router } from '@angular/router';
 import { environment } from '../environments/environment';
+
+import { CollectionService } from './core/services/collection/collection.service';
 
 @NgModule({
   imports: [
@@ -26,7 +28,7 @@ import { environment } from '../environments/environment';
   declarations: [
     AppComponent
   ],
-  providers: [],
+  providers: [CollectionService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

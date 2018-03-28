@@ -49,5 +49,6 @@ export class FormComponent implements OnInit, OnChanges {
 
   process(): void {
     this.nItem.emit(this.form.value);
+    console.log(this.form.value);
   }
 }
