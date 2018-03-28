@@ -1,4 +1,4 @@
-import { Component, OnInit, OnChanges, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, OnChanges, Output, EventEmitter, Input } from '@angular/core';
 import { State } from '../../enums/state.enum';
 import { Item } from '../../models/item.model';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -13,26 +13,27 @@ export class FormComponent implements OnInit, OnChanges {
   form: FormGroup;
   libelles = Object.values(State);
   @Output() nItem: EventEmitter<Item> = new EventEmitter();
+  @Input() item: Item;
 
   constructor(private fb: FormBuilder) {}
 
   createForm() {
     this.form = this.fb.group({
       name: [
-        '',
+        this.item ? this.item.name : '',
         Validators.compose([
           Validators.required,
           Validators.minLength(5)
         ])
       ],
       reference: [
-        '',
+        this.item ? this.item.reference : '',
         Validators.compose([
           Validators.required,
           Validators.minLength(4)
         ])
       ],
-      state: State.ALIVRER
+      state: this.item ? this.item.state : State.ALIVRER,
     });
   }
 

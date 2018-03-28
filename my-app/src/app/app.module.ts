@@ -17,6 +17,7 @@ import { Router } from '@angular/router';
 import { environment } from '../environments/environment.prod';
 
 import { CollectionService } from './core/services/collection/collection.service';
+import { EditresolverService } from './core/services/edit-resolver/editresolver.service';
 
 @NgModule({
   imports: [
@@ -33,7 +34,7 @@ import { CollectionService } from './core/services/collection/collection.service
   declarations: [
     AppComponent
   ],
-  providers: [CollectionService],
+  providers: [CollectionService, EditresolverService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -11,5 +11,7 @@
 
     <button class="btn btn-primary" *ngIf="state.ENCOURS === item.state"
     (click)='changeState(state.LIVREE)'>{{ state.LIVREE }}</button>
+
+    <a class="btn btn-secondary" [routerLink]="['/items/edit/', item.id]">edit</a>
   </div>
 </div>

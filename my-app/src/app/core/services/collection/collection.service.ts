@@ -53,4 +53,9 @@ export class CollectionService {
       .catch(error => console.log(error));
   }
 
+  // get data on item
+  getItem(id: string): Observable<Item[]> {
+    const item = this.afs.doc<Item>('collection/${id}');
+    return item;
+  }
 }
