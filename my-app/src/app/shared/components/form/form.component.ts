@@ -36,6 +36,10 @@ export class FormComponent implements OnInit, OnChanges {
     });
   }
 
+  isError(fieldName: string): Boolean {
+    return this.form.get(fieldName).invalid && this.form.get(fieldName).touched;
+  }
+
   ngOnInit() {
     this.createForm();
   }
