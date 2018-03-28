@@ -10,7 +10,7 @@ import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/fires
 @Injectable()
 export class CollectionService {
   itemsCollection: AngularFirestoreCollection<Item>;
-  private _collection: Item[];
+  private _collection$: Observable<Item[]>;
   // private _collection$: Subject<Item[]> = new Subject<Item[]>();
   // private _collection$: BehaviorSubject<Item[]> = new BehaviorSubject<Item[]>(null);
 
@@ -19,7 +19,7 @@ export class CollectionService {
     // private http: HttpClient
   ) {
     this.itemsCollection = afs.collection<Item>('collection');
-    this._collection = afs.itemsCollection.valueChanges();
+    this._collection$ = this.itemsCollection.valueChanges();
     // this._collection$ = afs.itemsCollection.valueChanges();
     // this._collection$ = this.http.get('mon_url_api_rest/collection');
   }
@@ -52,4 +52,5 @@ export class CollectionService {
     this.itemsCollection.doc(item.id).delete()
       .catch(error => console.log(error));
   }
+
 }

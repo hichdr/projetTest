@@ -49,6 +49,8 @@ export class FormComponent implements OnInit, OnChanges {
 
   process(): void {
     this.nItem.emit(this.form.value);
+    this.form.reset();
+    this.form.get('state').setValue(State.ALIVRER);
     console.log(this.form.value);
   }
 }
