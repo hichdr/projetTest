@@ -13,8 +13,14 @@ export class ItemComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  changeState(state: State): void {
+    this.item.state = state;
 
+    // update in db using collectionService
+
+  }
+
+  ngOnInit() {
   }
 
 }

@@ -1,10 +1,10 @@
-import { Directive, Input, OnInit, HostBinding } from '@angular/core';
+import { Directive, Input, OnInit, HostBinding, OnChanges } from '@angular/core';
 import { LowerCasePipe } from '@angular/common';
 
 @Directive({
   selector: '[appState]'
 })
-export class StateDirective implements OnInit {
+export class StateDirective implements OnChanges {
   @Input() appState: string;
   // décorateur HostBinding permet de binder la propriété html
   @HostBinding('class') className;
@@ -12,7 +12,7 @@ export class StateDirective implements OnInit {
 
   }
 
-  ngOnInit(): void {
+  ngOnChanges(): void {
     console.log(this.appState);
     this.className = this.formatCssClass(this.appState);
   }
